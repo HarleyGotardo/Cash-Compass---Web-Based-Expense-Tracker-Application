@@ -1,4 +1,4 @@
-# HarleyGotardo.github.io
+# Development of a Web-Based Personal Expense Tracker Application - Cash Compass: Utilizing Vanilla Web Development
 ## Vanilla Web Application Development
 
 ### Cash Compass
