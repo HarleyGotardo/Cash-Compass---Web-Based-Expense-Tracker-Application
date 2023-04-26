@@ -1,5 +1,5 @@
 # Development of a Web-based Cash Compass Personal Expense Tracker Application
-## Vanilla Web Application Development
+## Web Application Development
 
 ### Cash Compass
 Cash Compass is a personal finance management web application designed to help you keep track of your expenses and balance. With features like add income, add expense, and reflect, Cash Compass makes it simple and convenient to manage your finances.
