@@ -1,4 +1,4 @@
-# Development of a Web-Based Personal Expense Tracker Application - Cash Compass: Utilizing Vanilla Web Development
+# Development of a Web-based Cash Compass Personal Expense Tracker Application
 ## Vanilla Web Application Development
 
 ### Cash Compass
@@ -11,7 +11,7 @@ Cash Compass is a personal finance management web application designed to help y
 - **Expense List Management**: View, edit, sort, and delete your expenses with ease. The app provides a comprehensive list of all your expenses, allowing you to manage and analyze your spending habits better.
 
 ## How to Use
-1. Open the Cash Compass web application in your preferred web browser.
+1. Open the Cash Compass web application in your preferred web browser. Link: https://cash-compass-web-based-expense-tracker-application.vercel.app/
 2. If you have any income, use the Add Income feature to add the amount to your overall balance.
 3. Record any expenses by selecting the appropriate category, inputting the amount spent, and choosing the date of the transaction. Click the "Add" button to save the expense.
 4. If you need to adjust your overall balance, use the Reflect feature to input the correct amount.
