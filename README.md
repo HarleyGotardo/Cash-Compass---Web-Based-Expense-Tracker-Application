@@ -4,6 +4,9 @@
 ### Cash Compass
 Cash Compass is a personal finance management web application designed to help you keep track of your expenses and balance. With features like add income, add expense, and reflect, Cash Compass makes it simple and convenient to manage your finances.
 
+#DESIGNING
+Figma: Planned UI Design: https://www.figma.com/file/j2tHkKbHUCFpmTz2pZ03F5/Web-Based-Cash-Compass-Expense-Tracker-Application?node-id=0%3A1&t=dx8yxG7oYv3UhIGB-1
+
 ## Features
 - **Add Income**: Easily add a new balance to your overall money. This feature is perfect for when you receive your paycheck or any additional income. Keep track of your income and watch your savings grow.
 - **Add Expense**: Record your daily expenses in a few simple steps. Just select the category, input the amount spent, and the date of the transaction. Cash Compass will automatically update your balance.
