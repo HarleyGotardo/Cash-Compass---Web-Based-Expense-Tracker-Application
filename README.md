@@ -6,6 +6,7 @@ Cash Compass is a personal finance management web application designed to help y
 
 # DESIGNING
 Figma: Planned UI Design: https://www.figma.com/file/j2tHkKbHUCFpmTz2pZ03F5/Web-Based-Cash-Compass-Expense-Tracker-Application?node-id=0%3A1&t=dx8yxG7oYv3UhIGB-1
+Note: The UI design created in Figma was used as a reference, but some changes were made during the implementation process to improve the usability of the web app. Therefore, the final UI might differ from the original design, but it will still meet the functional requirements and provide a positive user experience.
 
 ## Features
 - **Add Income**: Easily add a new balance to your overall money. This feature is perfect for when you receive your paycheck or any additional income. Keep track of your income and watch your savings grow.
