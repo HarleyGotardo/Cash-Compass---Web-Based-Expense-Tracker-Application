@@ -5,13 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Cash Compass</title>
 </head>
 <body>
     <div class="container">
-        <img class="logo" src="img/favicon.png">
-        <h1>Cash Compass</h1>
+        <div class="header">
+            <img class="logo" src="img/favicon.png">
+            <h1>Cash Compass</h1>
+        </div>
+        <div class="reflect-section">
+            <h2 class="reflect-title">Reflect</h2>
+            <div class="input-group">
+                <label class="refLabel" for="reflect-input">Enter amount to reflect: 
+                </label> <br>
+                <input class="refInput" type="number" id="reflect-input">
+                <button class="reflect-button" id="reflect-btn">Reflect</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
