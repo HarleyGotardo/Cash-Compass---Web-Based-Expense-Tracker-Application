@@ -23,7 +23,9 @@ body {
     margin-right: 10px;
 }
 
-.reflect-section {
+.reflect-section,
+.balance-section,
+.input-section {
     background-color: rgb(208, 208, 208);
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -52,17 +54,26 @@ body {
     margin-bottom: 10px;
 }
   
-.reflect-button {
+.reflect-button,
+.income-button,
+.addCategoryButton {
     display: flex;
     margin-top: 10px;
     background-color: aquamarine;
     justify-content: center;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reflect-button:hover,
+.income-button:hover,
+.addCategoryButton:hover {
+    background-color: #7fffd4;
 }
 
 .balance-section {
-    background-color: rgb(208, 208, 208);
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin-top: 20px;
 }
@@ -86,8 +97,19 @@ body {
 }
 
 .income-button {
-    display: flex;
-    justify-content: center;
     margin-top: 10px;
-    background-color: aquamarine;
+}
+
+.expense-list-section {
+    background-color: rgb(208, 208, 208);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.input-section {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

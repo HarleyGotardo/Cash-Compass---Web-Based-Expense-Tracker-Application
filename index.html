@@ -25,12 +25,29 @@
             </div>
         </div>
         <div class="balance-section">
-            <h3 class="balance-title">Total Balance: <span id="total-balance">0</span> PHP</h3>
+            <h3 class="balance-title">Total Balance: <span id="total-balance"> 0 </span> PHP</h3>
             <div class="input-group-balance">
                 <label class="incLabel" for="income-input">Income Amount:</label>
                 <input type="number" id="income-input">
                 <button class="income-button" id="add-income-btn">Add Income</button>
             </div>
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="category-select">Category:</label>
+                    <select id="category-select">
+                        <option value="Food & Beverage">Food & Beverage</option>
+                        <option value="Rent">Rent</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Relaxing">Relaxing</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Health & Fitness">Health & Fitness</option>
+                        <option value="Utilities">Utilities</option>               
+                    </select> <br>
+                    <label for="custom-category-input">Custom Category:</label>
+                    <input type="text" id="custom-category-input">
+                    <button class="addCategoryButton" id="add-category-btn">Add Category</button>
+                </div>
         </div>
         </div>
     </div>
