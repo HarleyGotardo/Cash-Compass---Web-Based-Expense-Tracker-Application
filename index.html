@@ -15,25 +15,26 @@
             <img class="logo" src="img/favicon.png">
             <h1>Cash Compass</h1>
         </div>
-        <div class="reflect-section">
-            <h2 class="reflect-title">Reflect</h2>
+        <h5 style="text-align: center;"></h5>
+        <div class="reflection-section">
+            <h2>Reflect</h2>
             <div class="input-group">
-                <label class="refLabel" for="reflect-input">Enter amount to reflect: 
-                </label> <br>
-                <input class="refInput" type="number" id="reflect-input">
-                <button class="reflect-button" id="reflect-btn">Reflect</button>
+                <label for="reflect-input">Enter amount to reflect:</label>
+                <input type="number" id="reflect-input">
             </div>
+            <button id="reflect-btn">Reflect</button>
         </div>
+        
         <div class="balance-section">
-            <h3 class="balance-title">Total Balance: <span id="total-balance"> 0 </span> PHP</h3>
-            <div class="input-group-balance">
-                <label class="incLabel" for="income-input">Income Amount:</label>
+            <h3>Total Balance: <span id="total-balance">0</span> PHP</h3>
+            <div class="input-group">
+                <label for="income-input">Income Amount:</label>
                 <input type="number" id="income-input">
-                <button class="income-button" id="add-income-btn">Add Income</button>
             </div>
+            <button id="add-income-btn">Add Income</button>
         </div>
+             
         <div class="input-section">
-            <h3 style="text-align: center;">Expenses</h3>
             <div class="input-group">
                 <label for="category-select">Category:</label>
                 <select id="category-select">
@@ -48,8 +49,46 @@
                 </select> <br>
                 <label for="custom-category-input">Custom Category:</label>
                 <input type="text" id="custom-category-input">
-                <button class="addCategoryButton" id="add-category-btn">Add Category</button>
+                <button id="add-category-btn">Add Category</button>
             </div>
+            <div class="input-group">
+                <label for="amount-input">Expense Amount:</label>
+                <input type="number" id="amount-input">
+            </div>
+            <div class="input-group">
+                <label for="date-input">Date:</label>
+                <input type="date" id="date-input">
+            </div>
+            <button id="add-btn">Add</button>
+        </div>
+        <div class="expenses-list">
+            <div class="expenses-list">
+                <div class="expenses-list-header">
+                    <button id="edit-button">Edit</button>
+                    <h2>Expenses List</h2>
+                    <button id="sort-button">Sort</button>
+                </div>          
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-table-body">
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total:</td>
+                        <td id="total-amount"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </div>
 </body>
