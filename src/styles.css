@@ -103,6 +103,7 @@ h1, h2, h3 {
 }
 
 button {
+    width: 100%; /* Set the width to 100% */
     padding: 10px 15px;
     background-color: aquamarine;
     color: black;
@@ -111,6 +112,10 @@ button {
     cursor: pointer;
     margin-top: 10px;
     font-size: 14px;
+}
+
+.sortButton {
+    margin-bottom: 20px;
 }
 
 .expenses-list {
@@ -188,6 +193,7 @@ tfoot td {
 .balances{
     display: flex;
 }
+
 
 @media only screen and (max-width: 400px) {
     .header{
