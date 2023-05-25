@@ -21,6 +21,14 @@ function saveExpensesToLocalStorage() {
   localStorage.setItem('expenses', JSON.stringify(expenses));
 }
 
+function saveCustomCategoryToLocalStorage() {
+  const customCategories = Array.from(categorySelect.options)
+    .map(option => option.value)
+    .filter(option => option !== '');
+
+  localStorage.setItem('customCategories', JSON.stringify(customCategories));
+}
+
 function addExpenseToTable(expense) {
   const newRow = expensesTableBody.insertRow();
   const categoryCell = newRow.insertCell();
@@ -172,14 +180,29 @@ reflectBtn.addEventListener('click', function()
 });
 
 addCategoryBtn.addEventListener('click', function() {
-    const customCategory = customCategoryInput.value.trim();
-    if (customCategory !== '') {
-        // Create a new option element and add it to the category select dropdown menu
-        const newOption = document.createElement('option');
-        newOption.value = customCategory;
-        newOption.textContent = customCategory;
-        categorySelect.appendChild(newOption);
-        // Reset the custom category input field
-        customCategoryInput.value = '';
-    }
+  const customCategory = customCategoryInput.value.trim();
+  if (customCategory !== '') {
+    const newOption = document.createElement('option');
+    newOption.value = customCategory;
+    newOption.textContent = customCategory;
+    categorySelect.appendChild(newOption);
+    customCategoryInput.value = '';
+
+    saveCustomCategoryToLocalStorage();
+  }
 });
+
+function loadCustomCategoriesFromLocalStorage() {
+  const customCategoriesJSON = localStorage.getItem('customCategories');
+  if (customCategoriesJSON) {
+    const customCategories = JSON.parse(customCategoriesJSON);
+    customCategories.forEach(category => {
+      const newOption = document.createElement('option');
+      newOption.value = category;
+      newOption.textContent = category;
+      categorySelect.appendChild(newOption);
+    });
+  }
+}
+
+loadCustomCategoriesFromLocalStorage();
