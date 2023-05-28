@@ -13,130 +13,140 @@ const incomeInput = document.getElementById('income-input');
 const customCategoryInput = document.getElementById('custom-category-input');
 const addCategoryBtn = document.getElementById('add-category-btn');
 
-function saveTotalBalanceToLocalStorage() {
-  localStorage.setItem('totalBalance', totalBalance.textContent);
+function saveTotalBalanceToLocalStorage()
+{
+	localStorage.setItem('totalBalance', totalBalance.textContent);
 }
 
-function saveExpensesToLocalStorage() {
-  localStorage.setItem('expenses', JSON.stringify(expenses));
+function saveExpensesToLocalStorage()
+{
+	localStorage.setItem('expenses', JSON.stringify(expenses));
 }
 
-function saveCustomCategoryToLocalStorage() {
-  const customCategories = Array.from(categorySelect.options)
-    .map(option => option.value)
-    .filter(option => option !== '');
+function saveCustomCategoryToLocalStorage()
+{
+	const customCategories = Array.from(categorySelect.options)
+		.map(option => option.value)
+		.filter(option => option !== '');
 
-  localStorage.setItem('customCategories', JSON.stringify(customCategories));
+	localStorage.setItem('customCategories', JSON.stringify(customCategories));
 }
 
-function addExpenseToTable(expense) {
-  const newRow = expensesTableBody.insertRow();
-  const categoryCell = newRow.insertCell();
-  const amountCell = newRow.insertCell();
-  const dateCell = newRow.insertCell();
-  const deleteCell = newRow.insertCell();
+function addExpenseToTable(expense)
+{
+	const newRow = expensesTableBody.insertRow();
+	const categoryCell = newRow.insertCell();
+	const amountCell = newRow.insertCell();
+	const dateCell = newRow.insertCell();
+	const deleteCell = newRow.insertCell();
 
-  const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = 'Delete';
-  deleteBtn.classList.add('delete-btn');
-  deleteBtn.addEventListener('click', function () {
-    expenses.splice(expenses.indexOf(expense), 1);
-    totalAmount -= expense.amount;
-    totalAmountCell.textContent = totalAmount;
-    totalBalance.textContent = (parseFloat(totalBalance.textContent) + expense.amount).toFixed(2);
-    expensesTableBody.removeChild(newRow);
-    saveExpensesToLocalStorage();
-    saveTotalBalanceToLocalStorage();
-  });
-  
+	const deleteBtn = document.createElement('button');
+	deleteBtn.textContent = 'Delete';
+	deleteBtn.classList.add('delete-btn');
+	deleteBtn.addEventListener('click', function()
+	{
+		expenses.splice(expenses.indexOf(expense), 1);
+		totalAmount -= expense.amount;
+		totalAmountCell.textContent = totalAmount;
+		totalBalance.textContent = (parseFloat(totalBalance.textContent) + expense.amount).toFixed(2);
+		expensesTableBody.removeChild(newRow);
+		saveExpensesToLocalStorage();
+		saveTotalBalanceToLocalStorage();
+	});
 
-  categoryCell.textContent = expense.category;
-  amountCell.textContent = expense.amount;
-  dateCell.textContent = expense.date;
-  deleteCell.appendChild(deleteBtn);
+
+	categoryCell.textContent = expense.category;
+	amountCell.textContent = expense.amount;
+	dateCell.textContent = expense.date;
+	deleteCell.appendChild(deleteBtn);
 }
 
-addBtn.addEventListener('click', function () {
-  const category = categorySelect.value;
-  const amount = Number(amountInput.value);
-  const date = dateInput.value;
+addBtn.addEventListener('click', function()
+{
+	const category = categorySelect.value;
+	const amount = Number(amountInput.value);
+	const date = dateInput.value;
 
-  if (category === '') {
-    alert('Please select a category');
-    return;
-  }
-  if (isNaN(amount) || amount <= 0) {
-    alert('Please enter a valid amount');
-    return;
-  }
-  if (date === '') {
-    alert('Please select a date');
-    return;
-  }
+	if (category === '')
+	{
+		alert('Please select a category');
+		return;
+	}
+	if (isNaN(amount) || amount <= 0)
+	{
+		alert('Please enter a valid amount');
+		return;
+	}
+	if (date === '')
+	{
+		alert('Please select a date');
+		return;
+	}
 
-  const currentBalance = parseFloat(totalBalance.textContent);
+	const currentBalance = parseFloat(totalBalance.textContent);
 
-  if (amount > currentBalance) {
-    alert('Expense amount is greater than the total balance');
-    return;
-  }
+	if (amount > currentBalance)
+	{
+		alert('Expense amount is greater than the total balance');
+		return;
+	}
 
-  const expense = {
-    category,
-    amount,
-    date,
-  };
-  expenses.push(expense);
+	const expense = {
+		category,
+		amount,
+		date,
+	};
+	expenses.push(expense);
 
-  totalAmount += amount;
-  totalAmountCell.textContent = totalAmount;
+	totalAmount += amount;
+	totalAmountCell.textContent = totalAmount;
 
-  totalBalance.textContent = (currentBalance - amount).toFixed(2);
+	totalBalance.textContent = (currentBalance - amount).toFixed(2);
 
-  addExpenseToTable(expense);
-  totalBalance.textContent = (currentBalance - amount).toFixed(2);
+	addExpenseToTable(expense);
+	totalBalance.textContent = (currentBalance - amount).toFixed(2);
 
-  saveTotalBalanceToLocalStorage();
-  saveExpensesToLocalStorage();
+	saveTotalBalanceToLocalStorage();
+	saveExpensesToLocalStorage();
 });
 
 
 function loadExpensesFromLocalStorage()
 {
-    const expensesJSON = localStorage.getItem('expenses');
-    if (expensesJSON)
-    {
-        expenses = JSON.parse(expensesJSON);
-        expenses.forEach(expense =>
-        {
-            addExpenseToTable(expense); // Call the function to add the expense to the table
-            totalAmount += expense.amount;
-        });
-        totalAmountCell.textContent = totalAmount.toFixed(2); // Update totalAmount to display with 2 decimal places
-    }
-    const totalBalanceJSON = localStorage.getItem('totalBalance');
-    if (totalBalanceJSON)
-    {
-        totalBalance.textContent = totalBalanceJSON;
-    }
+	const expensesJSON = localStorage.getItem('expenses');
+	if (expensesJSON)
+	{
+		expenses = JSON.parse(expensesJSON);
+		expenses.forEach(expense =>
+		{
+			addExpenseToTable(expense); // Call the function to add the expense to the table
+			totalAmount += expense.amount;
+		});
+		totalAmountCell.textContent = totalAmount.toFixed(2); // Update totalAmount to display with 2 decimal places
+	}
+	const totalBalanceJSON = localStorage.getItem('totalBalance');
+	if (totalBalanceJSON)
+	{
+		totalBalance.textContent = totalBalanceJSON;
+	}
 }
 
 function addIncome()
 {
-    const incomeAmount = Number(incomeInput.value);
+	const incomeAmount = Number(incomeInput.value);
 
-    if (incomeAmount == 0)
-    {
-        alert('Please enter a valid income amount');
-        return;
-    }
+	if (incomeAmount == 0)
+	{
+		alert('Please enter a valid income amount');
+		return;
+	}
 
-    const currentBalance = parseFloat(totalBalance.textContent);
-    const newBalance = currentBalance + incomeAmount;
-    totalBalance.textContent = newBalance.toFixed(2);
-    incomeInput.value = ''; // Reset the income input field
+	const currentBalance = parseFloat(totalBalance.textContent);
+	const newBalance = currentBalance + incomeAmount;
+	totalBalance.textContent = newBalance.toFixed(2);
+	incomeInput.value = ''; // Reset the income input field
 
-    saveTotalBalanceToLocalStorage(); // Save the total balance to local storage
+	saveTotalBalanceToLocalStorage(); // Save the total balance to local storage
 }
 
 addIncomeBtn.addEventListener('click', addIncome);
@@ -144,18 +154,18 @@ addIncomeBtn.addEventListener('click', addIncome);
 
 addIncomeBtn.addEventListener('click', function()
 {
-    const incomeAmount = Number(incomeInput.value);
+	const incomeAmount = Number(incomeInput.value);
 
-    // Updated condition to show the alert only when incomeAmount is 0 or less
-    // if (incomeAmount == 0) {
-    //   alert('Please enter a valid income amount');
-    //   return;
-    // }
+	// Updated condition to show the alert only when incomeAmount is 0 or less
+	// if (incomeAmount == 0) {
+	//   alert('Please enter a valid income amount');
+	//   return;
+	// }
 
-    totalAmount += incomeAmount;
-    totalAmountCell.textContent = totalAmount.toFixed(2);
+	totalAmount += incomeAmount;
+	totalAmountCell.textContent = totalAmount.toFixed(2);
 
-    incomeInput.value = ''; // Reset the income input field
+	incomeInput.value = ''; // Reset the income input field
 });
 
 loadExpensesFromLocalStorage();
@@ -166,43 +176,67 @@ const reflectBtn = document.getElementById('reflect-btn');
 
 reflectBtn.addEventListener('click', function()
 {
-    const reflectAmount = Number(reflectInput.value);
+	const reflectAmount = Number(reflectInput.value);
 
-    if (isNaN(reflectAmount) || reflectAmount < 0)
-    {
-        alert('Please enter a valid amount');
-        return;
-    }
+	if (isNaN(reflectAmount) || reflectAmount < 0 || reflectAmount == 0)
+	{
+		alert('Please enter a valid amount');
+		return;
+	}
 
-    const currentBalance = parseFloat(totalBalance.textContent);
-    totalBalance.textContent = reflectAmount.toFixed(2);
-    reflectInput.value = '';
+	const currentBalance = parseFloat(totalBalance.textContent);
+	totalBalance.textContent = reflectAmount.toFixed(2);
+	reflectInput.value = '';
 });
 
-addCategoryBtn.addEventListener('click', function() {
-  const customCategory = customCategoryInput.value.trim();
-  if (customCategory !== '') {
-    const newOption = document.createElement('option');
-    newOption.value = customCategory;
-    newOption.textContent = customCategory;
-    categorySelect.appendChild(newOption);
-    customCategoryInput.value = '';
+addCategoryBtn.addEventListener('click', function()
+{
+	const customCategory = customCategoryInput.value.trim();
+	if (customCategory !== '')
+	{
+		const newOption = document.createElement('option');
+		newOption.value = customCategory;
+		newOption.textContent = customCategory;
+		categorySelect.appendChild(newOption);
+		customCategoryInput.value = '';
 
-    saveCustomCategoryToLocalStorage();
-  }
+		saveCustomCategoryToLocalStorage();
+	}
 });
 
-function loadCustomCategoriesFromLocalStorage() {
-  const customCategoriesJSON = localStorage.getItem('customCategories');
-  if (customCategoriesJSON) {
-    const customCategories = JSON.parse(customCategoriesJSON);
-    customCategories.forEach(category => {
-      const newOption = document.createElement('option');
-      newOption.value = category;
-      newOption.textContent = category;
-      categorySelect.appendChild(newOption);
-    });
-  }
+function loadCustomCategoriesFromLocalStorage()
+{
+	const customCategoriesJSON = localStorage.getItem('customCategories');
+	if (customCategoriesJSON)
+	{
+		const customCategories = JSON.parse(customCategoriesJSON);
+		customCategories.forEach(category =>
+		{
+			const newOption = document.createElement('option');
+			newOption.value = category;
+			newOption.textContent = category;
+			categorySelect.appendChild(newOption);
+		});
+	}
 }
 
 loadCustomCategoriesFromLocalStorage();
+
+function sortExpenses()
+{
+	expenses.sort((a, b) => b.amount - a.amount);
+	clearExpensesTable();
+	expenses.forEach(addExpenseToTable);
+	saveExpensesToLocalStorage();
+}
+
+const sortButton = document.getElementById('sort-button');
+sortButton.addEventListener('click', sortExpenses);
+
+function clearExpensesTable()
+{
+	while (expensesTableBody.firstChild)
+	{
+		expensesTableBody.removeChild(expensesTableBody.firstChild);
+	}
+}
