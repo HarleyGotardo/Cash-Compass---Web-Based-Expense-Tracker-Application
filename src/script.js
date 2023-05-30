@@ -275,5 +275,4 @@ function importData() {
 	fileInput.click();
 }
 
-document.getElementById('impButton').addEventListener('click', importData);
-	
+document.getElementById('impButton').addEventListener('click', importData);	
