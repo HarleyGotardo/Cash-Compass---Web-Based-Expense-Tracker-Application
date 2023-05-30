@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="styles.css">
-		<link rel="shortcut icon" type="image/png" href="img/cashcompass.png">
-		<title>Cash Compass</title>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="welcomePageStyles.css">
+    <link rel="shortcut icon" type="image/png" href="img/cashcompass.png">
+    <title>Cash Compass</title>
+</head>
 <body>
-    <h1>WELCOME TO CASH COMPASS!</h1>
-    <a id="start" class="startTracking" href="mainPage.html">Start Tracking Expenses</a>
+    <div class="header">
+        <img class="logo" src="img/logo.png">
+        <h1>Cash Compass</h1>
+    </div>
+    <div class="body">
+        <h1 class="greetings">WELCOME</h1>
+        <p style="text-align: center; margin-left: 40px;">Cash Compass is a personal finance management web application designed to help you keep track of your expenses and balance. With features like add income, add expense, and reflect, Cash Compass makes it simple and convenient to manage your finances.</p>
+        <h1 class="feat">FEATURES</h1>
+        <ul>
+            <li>Add Income: Easily add a new balance to your overall money. This feature is perfect for when you receive your paycheck or any additional income. Keep track of your income and watch your savings grow.</li> <br>
+            <li>Add Expense: Record your daily expenses in a few simple steps. Just select the category, input the amount spent, and the date of the transaction. Cash Compass will automatically update your balance.</li> <br>
+            <li>Reflect: Update the overall balance of your money with the input. This feature allows you to correct any discrepancies or adjust your balance for any reason.</li> <br>
+            <li>Expense List Management: View, sort, and delete your expenses with ease. The app provides a comprehensive list of all your expenses, allowing you to manage and analyze your spending habits better.</li> <br>
+        </ul>
+    </div>
+    <div class="startButton">
+        <button>
+            <a id="start" class="startTracking" href="mainPage.html">Start Tracking Expenses</a>
+        </button>
+    </div>
 </body>
 </html>
