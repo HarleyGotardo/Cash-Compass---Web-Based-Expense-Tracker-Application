@@ -45,13 +45,19 @@ function addExpenseToTable(expense)
 	deleteBtn.classList.add('delete-btn');
 	deleteBtn.addEventListener('click', function()
 	{
-		expenses.splice(expenses.indexOf(expense), 1);
-		totalAmount -= expense.amount;
-		totalAmountCell.textContent = totalAmount;
-		totalBalance.textContent = (parseFloat(totalBalance.textContent) + expense.amount).toFixed(2);
-		expensesTableBody.removeChild(newRow);
-		saveExpensesToLocalStorage();
-		saveTotalBalanceToLocalStorage();
+		var confirmation = confirm("Do you want to refund it to your total balance?");
+		if(confirmation) {			
+			totalAmount -= expense.amount;
+			totalAmountCell.textContent = totalAmount;
+			totalBalance.textContent = (parseFloat(totalBalance.textContent) + expense.amount).toFixed(2);
+			expensesTableBody.removeChild(newRow);
+			saveExpensesToLocalStorage();
+			saveTotalBalanceToLocalStorage();
+		} else if(!confirmation) {
+			expenses.splice(expenses.indexOf(expense), 1);
+			expensesTableBody.removeChild(newRow);
+			saveExpensesToLocalStorage();
+		}
 	});
 
 
@@ -156,12 +162,6 @@ addIncomeBtn.addEventListener('click', function()
 {
 	const incomeAmount = Number(incomeInput.value);
 
-	// Updated condition to show the alert only when incomeAmount is 0 or less
-	// if (incomeAmount == 0) {
-	//   alert('Please enter a valid income amount');
-	//   return;
-	// }
-
 	totalAmount += incomeAmount;
 	totalAmountCell.textContent = totalAmount.toFixed(2);
 
@@ -187,6 +187,7 @@ reflectBtn.addEventListener('click', function()
 	const currentBalance = parseFloat(totalBalance.textContent);
 	totalBalance.textContent = reflectAmount.toFixed(2);
 	reflectInput.value = '';
+	saveTotalBalanceToLocalStorage();
 });
 
 addCategoryBtn.addEventListener('click', function()
@@ -240,3 +241,39 @@ function clearExpensesTable()
 		expensesTableBody.removeChild(expensesTableBody.firstChild);
 	}
 }
+
+// Function to download data as a JSON file
+// for download data
+const downloadDataButton = document.getElementById('download-btn');
+
+function downloadData() {
+	const data = {
+	  expenses: expenses,
+	  totalBalance: totalBalance.textContent,
+	  customCategories: Array.from(categorySelect.options)
+		.map(option => option.value)
+		.filter(option => option !== '')
+	};
+	const dataJSON = JSON.stringify(data);
+	const blob = new Blob([dataJSON], { type: 'application/json' });
+	const url = URL.createObjectURL(blob);
+	const a = document.createElement('a');
+	a.href = url;
+	a.download = 'cash_compass_data.json';
+	a.click();
+	URL.revokeObjectURL(url);
+}
+
+downloadDataButton.addEventListener('click', downloadData);
+  
+// Function to handle the file selection and reading
+//for importing data
+function importData() {
+	var fileInput = document.createElement('input');
+	fileInput.type = 'file';
+	fileInput.accept = '.json'; // Restrict to only json files
+	fileInput.click();
+}
+
+document.getElementById('impButton').addEventListener('click', importData);
+	
