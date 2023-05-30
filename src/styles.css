@@ -112,7 +112,7 @@ h1, h2, h3, h5 {
     font-size: 14px;
 }
 
-button {
+button, .startTracking {
     width: 100%; /* Set the width to 100% */
     padding: 10px 15px;
     background-color: aquamarine;
@@ -214,3 +214,4 @@ tfoot td {
         padding: 5px;
    }
 }
+/* For the welcome.html*/

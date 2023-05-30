@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css">
+		<link rel="shortcut icon" type="image/png" href="img/cashcompass.png">
+		<title>Cash Compass</title>
+	</head>
+	<body>
+		<div class="header">
+			<img class="logo" src="img/logo.png">
+			<h1>Cash Compass</h1>
+		</div>
+		<button id="impButton" class="importButton"><image class="importimage" src="img/import.png"> <h3 class="importext">Import Data</h3></image></button>
+		<div class="Main">
+			<div class="container">
+				<div class="input">
+					<div class="totalbal">
+						<h3>Total Balance:</h3>
+						<div class="bal">
+							<span id="total-balance">0</span>
+							<span class="unit">PHP</span>
+						</div>
+					</div>
+					<div class="balances">
+						<div class="reflection-section">
+							<h3>Reflect</h3>
+							<div class="input-group">
+								<label class="reflect-label" for="reflect-input">Enter amount to reflect:</label>
+								<input type="number" id="reflect-input">
+							</div>
+							<button id="reflect-btn">Reflect</button>
+						</div>
+						<div class="balance-section">
+							<h3>Deposit</h3>
+							<div class="input-group">
+								<label class="income-label" for="income-input">Income Amount:</label>
+								<input type="number" id="income-input">
+							</div>
+							<button id="add-income-btn">Add Income</button>
+						</div>
+					</div>
+				</div>
+				<div class="input-section">
+					<div class="input-group">
+						<label for="custom-category-input">Add Category:</label>
+						<input type="text" id="custom-category-input">
+						<button id="add-category-btn">Add Category</button>
+						<label for="category-select">Category Selection:</label>
+						<select id="category-select">
+						</select>
+						<br>
+					</div>
+					<div class="input-group">
+						<label for="amount-input">Expense Amount:</label>
+						<input type="number" id="amount-input">
+					</div>
+					<div class="input-group">
+						<label for="date-input">Date:</label>
+						<input type="date" id="date-input">
+					</div>
+					<button class="addButton" id="add-btn">Add</button>
+				</div>
+			</div>
+			<div class="expenses-list">
+				<div class="expenses-list-header">
+					<h2>Expenses List</h2>
+					
+				</div>
+				<button class="sortButton" id="sort-button">Sort expenses descending order ↧</button>
+				<table>
+					<thead>
+						<tr>
+							<th>Category</th>
+							<th>Amount</th>
+							<th class="date">Date</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody id="expense-table-body"></tbody>
+					<tfoot>
+						<tr>
+							<td>Total:</td>
+							<td id="total-amount"></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+		<button id="download-btn" class="downloadButton"><image class="dLimage" src="img/dLbutton.png"> <h3 class="dLtext">Download Data</h3></image></button>
+		<script src="script.js"></script>
+	</body>
+</html>
