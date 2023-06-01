@@ -185,7 +185,7 @@ reflectBtn.addEventListener('click', function()
 	}
 
 	const currentBalance = parseFloat(totalBalance.textContent);
-	totalBalance.textContent = reflectAmount.toFixed(2);
+	totalBalance.textContent = reflectAmount.toFixed(2);   
 	reflectInput.value = '';
 	saveTotalBalanceToLocalStorage();
 });
@@ -267,12 +267,41 @@ function downloadData() {
 downloadDataButton.addEventListener('click', downloadData);
   
 // Function to handle the file selection and reading
-//for importing data
-function importData() {
-	var fileInput = document.createElement('input');
-	fileInput.type = 'file';
-	fileInput.accept = '.json'; // Restrict to only json files
-	fileInput.click();
-}
+// for importing data
+const importButton = document.getElementById('import');
 
-document.getElementById('impButton').addEventListener('click', importData);	
+function importData(event) {
+	const file = event.target.files[0];
+	const reader = new FileReader();
+  
+	reader.onload = function (e) {
+	  const contents = e.target.result;
+	  const data = JSON.parse(contents);
+	  expenses = data.expenses || [];
+	  totalBalance.textContent = data.totalBalance || '0';
+	  const customCategories = data.customCategories || [];
+	  categorySelect.innerHTML = '';
+	  for (const category of customCategories) {
+		const newOption = document.createElement('option');
+		newOption.value = category;
+		newOption.textContent = category;
+		categorySelect.appendChild(newOption);
+	  }
+  
+	  expensesTableBody.innerHTML = '';
+	  totalAmount = 0;
+	  for (const expense of expenses) {
+		addExpenseToTable(expense);
+		totalAmount += expense.amount;
+	  }
+	  totalAmountCell.textContent = totalAmount.toFixed(2);
+  
+	  saveTotalBalanceToLocalStorage();
+	  saveExpensesToLocalStorage();
+	  saveCustomCategoryToLocalStorage();
+	};
+  
+	reader.readAsText(file);
+  }
+
+  importButton.addEventListener('change', importData);

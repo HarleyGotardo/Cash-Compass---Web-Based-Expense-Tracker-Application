@@ -15,7 +15,12 @@
 			<img class="logo" src="img/logo.png">
 			<h1>Cash Compass</h1>
 		</div>
-		<button id="impButton" class="importButton"><image class="importimage" src="img/import.png"> <h3 class="importext">Import Data</h3></image></button>
+		<div>
+			<h3>Import Data</h3>
+			<div class="fileInput">
+				<input type="file" id="import">
+			</div>
+		</div>	
 		<div class="Main">
 			<div class="container">
 				<div class="input">
@@ -33,7 +38,7 @@
 								<label class="reflect-label" for="reflect-input">Enter amount to reflect:</label>
 								<input type="number" id="reflect-input">
 							</div>
-							<button id="reflect-btn">Reflect</button>
+							<button class="reflectBtn"id="reflect-btn">Reflect</button>
 						</div>
 						<div class="balance-section">
 							<h3>Deposit</h3>
@@ -41,7 +46,7 @@
 								<label class="income-label" for="income-input">Income Amount:</label>
 								<input type="number" id="income-input">
 							</div>
-							<button id="add-income-btn">Add Income</button>
+							<button class="addIncomeBtn" id="add-income-btn">Add Income</button>
 						</div>
 					</div>
 				</div>
@@ -49,7 +54,7 @@
 					<div class="input-group">
 						<label for="custom-category-input">Add Category:</label>
 						<input type="text" id="custom-category-input">
-						<button id="add-category-btn">Add Category</button>
+						<button class="addCategoryBtn" id="add-category-btn">Add Category</button>
 						<label for="category-select">Category Selection:</label>
 						<select id="category-select">
 						</select>
