@@ -5,7 +5,7 @@
 Cash Compass is a personal finance management web application designed to help you keep track of your expenses and balance. With features like add income, add expense, and reflect, Cash Compass makes it simple and convenient to manage your finances.
 
 # DESIGNING
-Figma: Planned UI Design: https://www.figma.com/file/j2tHkKbHUCFpmTz2pZ03F5/Web-Based-Cash-Compass-Expense-Tracker-Application?node-id=0%3A1&t=dx8yxG7oYv3UhIGB-1
+Figma: Planned UI Design: [Cash Compass Figma Design](https://www.figma.com/file/j2tHkKbHUCFpmTz2pZ03F5/Web-Based-Cash-Compass-Expense-Tracker-Application?node-id=0%3A1&t=dx8yxG7oYv3UhIGB-1)
 Note: The UI design created in Figma was used as a reference, but some changes were made during the implementation process to improve the usability of the web app. Therefore, the final UI might differ from the original design, but it will still meet the functional requirements and provide a positive user experience.
 
 ## Features
@@ -17,6 +17,6 @@ Note: The UI design created in Figma was used as a reference, but some changes w
 ## How to Use
 1. Open the Cash Compass web application in your preferred web browser. Link: [Cash Compass](https://cash-compass-expense-tracker-application.vercel.app/)
 2. If you have any income, use the Add Income feature to add the amount to your overall balance.
-3. Record any expenses by selecting the appropriate category, inputting the amount spent, and choosing the date of the transaction. Click the "Add" button to save the expense.
-4. If you need to adjust your overall balance, use the Reflect feature to input the correct amount.
-5. The Expense List displays all your recorded expenses. You can sort the list, or delete any entry by clicking the appropriate buttons.
+3. Record any expenses by inputting a custom category and then selecting the appropriate category for that particular expense, inputting the amount spent, and choosing the date of the transaction. Click the "Add" button to save the expense.
+4. If you need to adjust your overall balance base on the balance that you have in real life, use the Reflect feature to input the correct amount, it will change the overall balance base on your amount input without changing the other data/information in the app.
+5. The Expense List displays all your recorded expenses. You can sort the list by descending order only, or delete any entry by clicking the delete button, you'll be asked if you want to refund the deleted expense amount to your overall balance, it's up to you to decide.
