@@ -305,4 +305,31 @@ function importData(event) {
 	reader.readAsText(file);
   }
 
-  importButton.addEventListener('change', importData);
+  // Add functionality to trigger button click when pressing Enter key
+amountInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    addBtn.click();
+  }
+});
+
+incomeInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    addIncomeBtn.click();
+  }
+});
+
+reflectInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    reflectBtn.click();
+  }
+});
+
+customCategoryInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    addCategoryBtn.click();
+  }
+});
