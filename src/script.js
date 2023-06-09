@@ -179,7 +179,7 @@ reflectBtn.addEventListener('click', function()
 	const reflectAmount = Number(reflectInput.value);
 	const currentBalance2 = parseFloat(totalBalance.textContent);
 
-	if (isNaN(reflectAmount) || reflectAmount < 0 || reflectAmount == 0 || reflectAmount > currentBalance2)
+	if (isNaN(reflectAmount) || reflectAmount < 0 || reflectAmount >= currentBalance2)
 	{
 		alert('Please enter a valid amount. Must also be less than the total balance.');
 		return;
