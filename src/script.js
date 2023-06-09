@@ -54,6 +54,8 @@ function addExpenseToTable(expense)
 			saveExpensesToLocalStorage();
 			saveTotalBalanceToLocalStorage();
 		} else if(!confirmation) {
+			totalAmount -= expense.amount;
+			totalAmountCell.textContent = totalAmount;
 			expenses.splice(expenses.indexOf(expense), 1);
 			expensesTableBody.removeChild(newRow);
 			saveExpensesToLocalStorage();
@@ -331,5 +333,12 @@ customCategoryInput.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault();
     addCategoryBtn.click();
+  }
+});
+
+addBtn.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    reflectBtn.click();
   }
 });
