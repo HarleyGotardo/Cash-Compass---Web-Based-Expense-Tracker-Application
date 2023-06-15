@@ -5,6 +5,11 @@ body {
     text-align:left;
 }
 
+.categorySelectClass {
+    display: flex;
+    margin-top: 25px;
+}
+
 .input {
     display: flex;
     width:auto;
