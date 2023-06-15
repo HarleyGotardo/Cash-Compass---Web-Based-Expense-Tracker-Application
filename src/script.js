@@ -269,43 +269,54 @@ function downloadData() {
 
 downloadDataButton.addEventListener('click', downloadData);
   
-// Function to handle the file selection and reading
-// for importing data
 const importButton = document.getElementById('import');
+importButton.addEventListener('change', importData);
 
 function importData(event) {
-	const file = event.target.files[0];
-	const reader = new FileReader();
-  
-	reader.onload = function (e) {
-	  const contents = e.target.result;
-	  const data = JSON.parse(contents);
-	  expenses = data.expenses || [];
-	  totalBalance.textContent = data.totalBalance || '0';
-	  const customCategories = data.customCategories || [];
-	  categorySelect.innerHTML = '';
-	  for (const category of customCategories) {
-		const newOption = document.createElement('option');
-		newOption.value = category;
-		newOption.textContent = category;
-		categorySelect.appendChild(newOption);
-	  }
-  
-	  expensesTableBody.innerHTML = '';
-	  totalAmount = 0;
-	  for (const expense of expenses) {
-		addExpenseToTable(expense);
-		totalAmount += expense.amount;
-	  }
-	  totalAmountCell.textContent = totalAmount.toFixed(2);
-  
-	  saveTotalBalanceToLocalStorage();
-	  saveExpensesToLocalStorage();
-	  saveCustomCategoryToLocalStorage();
-	};
-  
-	reader.readAsText(file);
+  const file = event.target.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    try {
+      const contents = e.target.result;
+      const data = JSON.parse(contents);
+      expenses = data.expenses || [];
+      totalBalance.textContent = data.totalBalance || '0';
+      const customCategories = data.customCategories || [];
+      categorySelect.innerHTML = '';
+      for (const category of customCategories) {
+        const newOption = document.createElement('option');
+        newOption.value = category;
+        newOption.textContent = category;
+        categorySelect.appendChild(newOption);
+      }
+
+      expensesTableBody.innerHTML = '';
+      totalAmount = 0;
+      for (const expense of expenses) {
+        addExpenseToTable(expense);
+        totalAmount += expense.amount;
+      }
+      totalAmountCell.textContent = totalAmount.toFixed(2);
+
+      saveTotalBalanceToLocalStorage();
+      saveExpensesToLocalStorage();
+      saveCustomCategoryToLocalStorage();
+    } catch (error) {
+      console.error('Error importing data:', error);
+      alert('Failed to import data. Please make sure the file is in the correct format.');
+    }
+  };
+
+  reader.onerror = function (e) {
+    console.error('Error reading file:', e.target.error);
+    alert('Failed to read the selected file.');
+  };
+
+  if (file) {
+    reader.readAsText(file);
   }
+}
 
   // Add functionality to trigger button click when pressing Enter key
 amountInput.addEventListener('keydown', function(event) {
