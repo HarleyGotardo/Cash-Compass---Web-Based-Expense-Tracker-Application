@@ -113,6 +113,8 @@ addBtn.addEventListener('click', function()
 
 	addExpenseToTable(expense);
 	totalBalance.textContent = (currentBalance - amount).toFixed(2);
+	amountInput.value = '';
+	
 
 	saveTotalBalanceToLocalStorage();
 	saveExpensesToLocalStorage();
