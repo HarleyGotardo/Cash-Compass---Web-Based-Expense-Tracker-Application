@@ -223,43 +223,97 @@ tfoot td {
     margin-bottom: 5px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .totalbal {
+        display: flex;
+        align-items: center;
+    }
+
+    .reflection-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .balance-section {
+        display: flex;
+        align-items: center;   
+    }
+
     .header {
         flex-direction: column;
         align-items: center;
+        padding: 10px;
+        width: 100%;
     }
-    
+
     .logo {
         margin-right: 0;
         margin-bottom: 10px;
     }
-    
+
     .Main {
+        flex-direction: column;
         padding: 10px;
     }
-    
+
     .container {
         margin-right: 0;
         padding: 0;
     }
-    
+
     .input-section {
         width: 100%;
+        margin-top: 20px;
     }
-    
+
     .expenses-list {
         width: 100%;
+        margin-top: 20px;
     }
-    
+
     .reflect-label,
     .income-label {
         text-align: center;
         margin-bottom: 5px;
     }
-    
+
     .input-group select,
     .input-group input[type="number"],
     .input-group input[type="date"] {
         font-size: 12px;
+    }
+
+    .input-group button,
+    .startTracking {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .expenses-list table {
+        font-size: 12px;
+    }
+
+    .expenses-list-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .expenses-list-header h2 {
+        margin: 10px 0;
+    }
+
+    .expenses-list-header button {
+        margin: 5px 0;
+    }
+
+    .balances {
+        flex-direction: column;
     }
 }
