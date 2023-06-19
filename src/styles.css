@@ -223,7 +223,7 @@ tfoot td {
     margin-bottom: 5px;
 }
 
-@media only screen {
+@media only screen and (max-width: 768px) {
     body {
         display: flex;
         flex-direction: column;
