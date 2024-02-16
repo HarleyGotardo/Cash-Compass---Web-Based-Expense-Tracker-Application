@@ -50,9 +50,10 @@ function addExpenseToTable(expense)
 			totalAmount -= expense.amount;
 			totalAmountCell.textContent = totalAmount;
 			totalBalance.textContent = (parseFloat(totalBalance.textContent) + expense.amount).toFixed(2);
+			expenses.splice(expenses.indexOf(expense), 1);
 			expensesTableBody.removeChild(newRow);
-			saveExpensesToLocalStorage();
 			saveTotalBalanceToLocalStorage();
+			saveExpensesToLocalStorage();
 		} else if(!confirmation) {
 			totalAmount -= expense.amount;
 			totalAmountCell.textContent = totalAmount;
