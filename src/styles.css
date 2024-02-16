@@ -32,7 +32,7 @@ body {
 }
 
 .header {
-    background-color: aquamarine;
+    background-color: #28cff54f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,7 @@ h1, h2, h3, h5 {
 }
 
 .reflection-section, .balance-section, .input-section, .expenses-list, .totalbal{
-    background-color: rgb(255, 253, 253);
+    /* background-color: #28cff54f; */
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.196);
     padding: 20px;
@@ -74,8 +74,8 @@ h1, h2, h3, h5 {
     text-align: center;
 }
 
-.totalbal{
-    background-color: aquamarine;
+.totalbal {
+    background-color: #28cff54f; 
 }
 
 .reflection-section {
@@ -127,7 +127,7 @@ h1, h2, h3, h5 {
 button, .startTracking {
     width: 100%; /* Set the width to 100% */
     padding: 10px 15px;
-    background-color: aquamarine;
+    background-color: #28cff54f;
     color: black;
     border: none;
     border-radius: 4px;
@@ -172,7 +172,7 @@ th, td {
 }
 
 th {
-    background-color: aquamarine;
+    background-color: #28cff54f;
     color: black;
     text-align: center;
 }
@@ -256,7 +256,7 @@ tfoot td {
         padding: 10px;
         width: 100%;
         background-color: white; */
-        background-color: aquamarine;
+        background-color: #28cff54f;
         display: flex;
         justify-content: center;
         align-items: center;

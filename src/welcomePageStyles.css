@@ -1,81 +1,95 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Google Sans', sans-serif;
+    background-color: #f2f2f289;
     margin: 0;
     padding: 0;
-    background-color: rgb(224, 235, 244);
 }
 
 .header {
-    background-color: aquamarine;
     display: flex;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.196);
-    padding-top: 15px;
-    padding-bottom: 15px;
+    justify-content: center;
+    background-color: #28cff54f;
+    padding: 0px;
+    margin-bottom: 20px;
 }
 
 .logo {
     width: 50px;
     height: 50px;
+    margin-right: 10px;
 }
 
 .header h1 {
-    font-size: 30px;
-    margin-top: 15px;
-    margin-left: 7px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333333;
 }
 
 .body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .greetings {
     font-size: 32px;
-    text-align: center;
-    color: #333;
-}
-
-p {
+    font-weight: 500;
+    color: #333333;
     margin-bottom: 20px;
 }
 
 .feat {
-    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 10px;
 }
 
 ul {
+    list-style-type: disc;
     margin-left: 20px;
-    text-align: justify;
+    margin-bottom: 20px;
+}
+
+li {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 10px;
 }
 
 .startButton {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.startButton button {
+.start-btn {
     background-color: aquamarine;
-    color: black;
     border: none;
+    border-radius: 4px;
     padding: 10px 20px;
-    text-align: center;
+    color: #ffffff;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
-.startButton button:hover {
-    background-color: rgb(0, 255, 170);
-}
-
-.startButton a {
-    color: black;
+.start-btn:hover {
+    background-color: #08c466;
     text-decoration: none;
 }
-/* 
-.startButton a:hover {
-    text-decoration: underline;
-} */
+
+/* Glossy Background */
+.glossy-background {
+    background-image: linear-gradient(to bottom right, #ffffff7e, #f2f2f276);
+}
+
+.startTracking  {
+    text-decoration: none;
+}
