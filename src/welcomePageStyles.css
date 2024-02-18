@@ -9,7 +9,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #28cff54f;
+    /* background-color: #28cff54f; */
     padding: 0px;
     margin-bottom: 20px;
 }
@@ -23,14 +23,16 @@ body {
 .header h1 {
     font-size: 24px;
     font-weight: 500;
-    color: #333333;
+    color: #000000;
 }
 
 .body {
+    background: transparent;
+    backdrop-filter: blur(30px);
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -38,14 +40,14 @@ body {
 .greetings {
     font-size: 32px;
     font-weight: 500;
-    color: #333333;
+    color: #000000;
     margin-bottom: 20px;
 }
 
 .feat {
     font-size: 24px;
     font-weight: 500;
-    color: #333333;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -57,7 +59,7 @@ ul {
 
 li {
     font-size: 16px;
-    color: #333333;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -68,11 +70,11 @@ li {
 }
 
 .start-btn {
-    background-color: aquamarine;
+    background-color: #9cafc1;
     border: none;
     border-radius: 4px;
     padding: 10px 20px;
-    color: #ffffff;
+    /* color: #b34d4d; */
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -81,15 +83,19 @@ li {
 }
 
 .start-btn:hover {
-    background-color: #08c466;
+    background-color: #6aa3a8;
     text-decoration: none;
 }
 
 /* Glossy Background */
 .glossy-background {
-    background-image: linear-gradient(to bottom right, #ffffff7e, #f2f2f276);
+    background-image: url("img/hehehe.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 
 .startTracking  {
     text-decoration: none;
+    color: #000000;
 }
