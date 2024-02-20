@@ -43,10 +43,9 @@ function addExpenseToTable(expense)
 	const deleteBtn = document.createElement('button');
 	deleteBtn.textContent = 'Delete';
 	deleteBtn.classList.add('delete-btn');
-	deleteBtn.addEventListener('click', function()
-	{
-		var confirmation = confirm("Do you want to refund it to your total balance?");
-		if(confirmation) {			
+	deleteBtn.addEventListener('click', function() {
+		var refundOption = prompt("Do you want to refund it to your total balance? (yes/no)");
+		if (refundOption === 'yes') {
 			totalAmount -= expense.amount;
 			totalAmountCell.textContent = totalAmount;
 			totalBalance.textContent = (parseFloat(totalBalance.textContent) + expense.amount).toFixed(2);
@@ -54,7 +53,7 @@ function addExpenseToTable(expense)
 			expensesTableBody.removeChild(newRow);
 			saveTotalBalanceToLocalStorage();
 			saveExpensesToLocalStorage();
-		} else if(!confirmation) {
+		} else if (refundOption === 'no') {
 			totalAmount -= expense.amount;
 			totalAmountCell.textContent = totalAmount;
 			expenses.splice(expenses.indexOf(expense), 1);
